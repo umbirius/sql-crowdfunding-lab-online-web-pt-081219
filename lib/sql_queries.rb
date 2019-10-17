@@ -33,7 +33,7 @@ end
 
 def selects_user_names_and_amounts_of_all_pledges_grouped_by_name_then_orders_them_by_the_summed_amount
   "SELECT users.name, pledges.amount 
-  JOIN ON pledges.user_id = users.id
+  FROM pledges JOIN users ON pledges.user_id = users.id
   GROUP BY users.name 
   ORDER BY SUM(pledges.amount"
 end
